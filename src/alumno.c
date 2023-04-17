@@ -30,7 +30,7 @@ int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) 
     if (resultado > 0) {
         disponibles -= resultado;
         cadena += resultado;
-        largo+= resultado;
+        //largo+= resultado;
         resultado = SerializarCadena("nombre", alumno->nombre, cadena, disponibles);
     }
 
