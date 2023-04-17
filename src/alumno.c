@@ -42,7 +42,7 @@ int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) 
 
     if (resultado > 0) {
         cadena += resultado;
-        *cadena = '}'
+        *(cadena - 1) = '}';
         resultado = espacio - disponibles;
     }
 
