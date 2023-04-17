@@ -7,15 +7,26 @@ extern "C" {
 
 #include <stdint.h>
 
+/**
+ * @brief Define tamaño de los campos de texto
+ *
+ * descripcion mas extensa
+ *
+ */
+
 #define TAMANO 100
 
-typedef struct alumno_s {
-    char apellido[TAMANO];
-    char nombre[TAMANO];
-    uint32_t documento;
+//! Estructura para almacenar datos de un alumno
+typedef struct alumno_s {  // aqui en H va lo publico, en C lo privado
+    char apellido[TAMANO]; //!< almacena el apellido
+    char nombre[TAMANO];   //!< almacena el Nombre
+    uint32_t documento;    //!< almacena el Documento
 } * alumno_t;
 
-int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio);
+int serializar(
+    const struct alumno_s * alumno, //!< Puntero con la estructura con los datos del alumno
+    char cadena[],                  //!< Puntero a la cadena de resultado
+    uint32_t espacio);              //!< Espacio disponible
 
 #ifdef __cplusplus
 }
