@@ -5,8 +5,8 @@ int main(void) {
 
     static const struct alumno_s yo = {
         .apellido = "Gerez Jimenez",
-        .nombre = "Juan Jose Armando"
-        .documento = 41649897,          //Necesita coma?
+        .nombre = "Juan Jose Armando",
+        .documento = 41649897,
     };
 
     char cadena[256];
