@@ -7,13 +7,15 @@ extern "C" {
 
 #include <stdint.h>
 
-#define TAMANO 60
+#define TAMANO 100
 
 typedef struct alumno_s {
-    char apellido[TAMANO]; //!< almacena el apellido
-    char nombre[TAMANO];   //!< almacena el nombre
-    uint32_t documento;    //!< almacena numero de documento
+    char apellido[TAMANO];
+    char nombre[TAMANO];
+    uint32_t documento;
 } * alumno_t;
+
+int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio);
 
 #ifdef __cplusplus
 }
