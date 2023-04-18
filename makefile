@@ -26,5 +26,8 @@ all: $(OBJ_FILES) $(BIN_DIR)
 clean: $(OUT_DIR)
 	rm -r $(OUT_DIR)
 
-doc:
+build/doc:
+	mkdir -p build/doc
+
+doc: build/doc
 	doxygen Doxyfile
