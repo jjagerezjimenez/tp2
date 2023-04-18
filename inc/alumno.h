@@ -8,6 +8,7 @@ extern "C" {
 #include <stdint.h>
 
 /**
+ * @struct EstructuraAlumno
  * @brief Define tamaño de los campos de texto
  *
  * descripcion mas extensa
