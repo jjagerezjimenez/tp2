@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-//static int SerializarCadena();
-
-//static int SerializarNumero();
-
 
 static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {           //const?
     return snprintf(cadena, espacio, "\"%s\":\"%s\",", campo, valor);
@@ -18,10 +14,8 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) {
     int disponibles = espacio;
     int resultado;
-    
-    
+       
     cadena[0] = '{';
-    //*cadena = '{';
     cadena++;
 
     disponibles--;
@@ -30,7 +24,6 @@ int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) 
     if (resultado > 0) {
         disponibles -= resultado;
         cadena += resultado;
-        //largo+= resultado;
         resultado = SerializarCadena("nombre", alumno->nombre, cadena, disponibles);
     }
 
@@ -46,8 +39,6 @@ int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) 
         resultado = espacio - disponibles;
     }
 
-    
-    
     return resultado;
 }
 
