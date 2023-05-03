@@ -11,7 +11,7 @@ int main(void) {
 
     char cadena[256];
     alumno_t yo = CrearAlumno("Gerez Jimenez", "Juan Jose Aemando", 41649897);
-    //alumno_t otro = CrearAlumno();            //por si quiero agregar otro alumno
+    alumno_t otro = CrearAlumno("Garcia", "Pablo", 1234567);            //por si quiero agregar otro alumno
 
     /**
      * @brief Cargo mis datos con la funcion main.
@@ -20,6 +20,12 @@ int main(void) {
     
     
        if(Serializar(yo, cadena, sizeof(cadena)) >= 0) {                                   //quitar "resultado"
+            printf("%s\n", cadena);
+       }else{
+            printf("Error al serializar\n");
+       } 
+
+       if(Serializar(otro, cadena, sizeof(cadena)) >= 0) {                                   //quitar "resultado"
             printf("%s\n", cadena);
        }else{
             printf("Error al serializar\n");
