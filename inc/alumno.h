@@ -21,7 +21,7 @@ extern "C" {
 typedef struct alumno_s * alumno_t;
 
 
-alumno_t CrearAlumno (char * apellido, char * nombre, int documento);
+alumno_t CrearAlumno (char * apellido, char * nombre, uint32_t documento);
 
 int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio);
 
@@ -29,7 +29,7 @@ int GetDocumento(alumno_t alumno);
 
 
 
-int Serializar(alumno_t alumno, char cadena[], uint32_t espacio);
+int Serializar(alumno_t alumno, char * cadena, uint32_t espacio);
 
 #ifdef __cplusplus
 }

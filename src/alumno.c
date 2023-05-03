@@ -20,18 +20,24 @@ struct alumno_s {
 };
 
 
+static int SerializarTexto(const char * campo, const char * valor, char * cadena, int espacio);
+
+static int SerializarNumero(const char * campo, const int valor, char * cadena, int espacio);
+
+
+
 static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {          
     return snprintf(cadena, espacio, "\"%s\":\"%s\",", campo, valor);
 }
 
-static int SerializarNumero(const char * campo, int valor, char * cadena, int espacio) {
+static int SerializarNumero(const char * campo, const int valor, char * cadena, int espacio) {
     return snprintf(cadena, espacio, "\"%s\":\"%d\",", campo, valor);
 }
 
 
 //static struct alumno_s instancias[50] = {0}; //50 huecos              //otra forma
 
-alumno_t CrearAlumno (char * apellido, char * nombre, int documento) {
+alumno_t CrearAlumno (char * apellido, char * nombre, uint32_t documento) {
     alumno_t resultado;             //parto aqui
     
 #if opcion == 1             // Forma Dinamica
@@ -65,12 +71,12 @@ for (uint8_t i = 0; i <= 50; i++) {
 
         return resultado;   // va aqui el return?
     }
-    return NULL;    //problema compil
+    
 
 }
 #endif
 
-return resultado;
+return NULL;
 
 }
 
@@ -89,7 +95,7 @@ int GetDocumento(alumno_t alumno) {
 
 
 
-int Serializar(alumno_t alumno, char cadena[], uint32_t espacio) {
+int Serializar(alumno_t alumno, char * cadena, uint32_t espacio) {
     int disponibles = espacio;
     int resultado;
        
