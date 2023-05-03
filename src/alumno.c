@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#define opcion 1 //modificar a 2 si estatico
+
+#if opcion == 1
+
 
 #define TAMANO 100
 
@@ -78,3 +82,4 @@ int Serializar(alumno_t alumno, char cadena[], uint32_t espacio) {
 }
 
 
+#endif
