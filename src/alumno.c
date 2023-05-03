@@ -50,7 +50,7 @@ static struct alumno_s instancias[50] = {0}; //50 huecos
 
 uint8_t i = 0;//consultar porque no int
 
-for (uint8_t i = 0; i <= MAX_OBJ; i++) {
+for (uint8_t i = 0; i <= 50; i++) {
 
     if (instancias[i].ocupado == 0) {
 
@@ -66,6 +66,8 @@ for (uint8_t i = 0; i <= MAX_OBJ; i++) {
 
 }
 #endif
+
+return resultado;
 
 }
 
