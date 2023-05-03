@@ -18,16 +18,18 @@ extern "C" {
 #define TAMANO 100
 
 //! Estructura para almacenar datos de un alumno
-typedef struct alumno_s {  // aqui en H va lo publico, en C lo privado
-    char apellido[TAMANO]; //!< almacena el apellido
-    char nombre[TAMANO];   //!< almacena el Nombre
-    uint32_t documento;    //!< almacena el Documento
-} * alumno_t;
+typedef struct alumno_s * alumno_t;
 
-int serializar(
-    const struct alumno_s * alumno, //!< Puntero con la estructura con los datos del alumno
-    char cadena[],                  //!< Puntero a la cadena de resultado
-    uint32_t espacio);              //!< Espacio disponible
+
+alumno_t CrearAlmuno (char * apellido, char * nombre, int documento);
+
+int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio);
+
+int GetDocumento(alumno_t alumno);
+
+
+
+int Serializar(alumno_t alumno, char cadena[], uint32_t espacio);
 
 #ifdef __cplusplus
 }
