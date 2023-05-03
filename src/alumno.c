@@ -37,12 +37,15 @@ alumno_t CrearAlumno (char * apellido, char * nombre, int documento) {
 #if opcion == 1             // Forma Dinamica
 
     resultado = malloc(sizeof(struct alumno_s));                   //Malloc se usa para crear "objetos" de forma dinamica
+    if (resultado != NULL) {
     strcpy(resultado->apellido, apellido);
     strcpy(resultado->nombre, nombre);
     resultado->documento = documento;
+    } else {
+        return NULL;
+    }
 
-
-    return resultado;
+    //return resultado;
 
 #else       //parte estatica
 
