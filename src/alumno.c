@@ -2,19 +2,21 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-#define opcion 1 //modificar a 2 si estatico
-
-#if opcion == 1
-
+#include <stdbool.h>
 
 #define TAMANO 100
+
+#define opcion 1 //modificar a 2 si quiero ver estatico, 1 para dinamico
+
+
+
+
 
 struct alumno_s {  
     char apellido[TAMANO]; 
     char nombre[TAMANO];   
     uint32_t documento;  
- //   bool ocupado;             //otra forma
+    bool ocupado;             //otra forma con estatica
 };
 
 
@@ -30,12 +32,44 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 //static struct alumno_s instancias[50] = {0}; //50 huecos              //otra forma
 
 alumno_t CrearAlumno (char * apellido, char * nombre, int documento) {
-    alumno_t resultado = malloc(sizeof(struct alumno_s));                   //Malloc se usa para crear "objetos" de forma dinamica
+    alumno_t resultado;             //parto aqui
+    
+#if opcion == 1             // Forma Dinamica
+
+    resultado = malloc(sizeof(struct alumno_s));                   //Malloc se usa para crear "objetos" de forma dinamica
     strcpy(resultado->apellido, apellido);
     strcpy(resultado->nombre, nombre);
     resultado->documento = documento;
+
+
     return resultado;
+
+#else       //parte estatica
+
+static struct alumno_s instancias[50] = {0}; //50 huecos
+
+uint8_t i = 0;//consultar porque no int
+
+for (uint8_t i = 0; i <= MAX_OBJ; i++) {
+
+    if (instancias[i].ocupado == 0) {
+
+        resultado = &instancias[i];
+        strcpy(instancias[i].apellido, apellido);
+        strcpy(instancias[i].nombre, nombre);
+        instancias[i].documento = documento;
+        instancias[i].ocupado = true;
+
+        return resultado;   // va aqui el return?
+    }
+    return NULL;    //problema compil
+
 }
+#endif
+
+}
+
+
 
 int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio) {
     return -1;      //para sacar warning
@@ -82,4 +116,3 @@ int Serializar(alumno_t alumno, char cadena[], uint32_t espacio) {
 }
 
 
-#endif
