@@ -20,12 +20,6 @@ struct alumno_s {
 };
 
 
-static int SerializarTexto(const char * campo, const char * valor, char * cadena, int espacio);
-
-static int SerializarNumero(const char * campo, const int valor, char * cadena, int espacio);
-
-
-
 static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {          
     return snprintf(cadena, espacio, "\"%s\":\"%s\",", campo, valor);
 }
@@ -35,7 +29,7 @@ static int SerializarNumero(const char * campo, const int valor, char * cadena, 
 }
 
 
-//static struct alumno_s instancias[50] = {0}; //50 huecos              //otra forma
+//static struct alumno_s instancias[50] = {0}; //50 huecos             
 
 alumno_t CrearAlumno (char * apellido, char * nombre, uint32_t documento) {
     alumno_t resultado;             //parto aqui
@@ -69,14 +63,15 @@ for (uint8_t i = 0; i <= 50; i++) {
         instancias[i].documento = documento;
         instancias[i].ocupado = true;
 
-        return resultado;   // va aqui el return?
+        return resultado;   
     }
     
 
 }
+
 #endif
 
-return NULL;
+return resultado;
 
 }
 
@@ -125,5 +120,6 @@ int Serializar(alumno_t alumno, char * cadena, uint32_t espacio) {
 
     return resultado;
 }
+
 
 
