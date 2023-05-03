@@ -37,7 +37,7 @@ int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio) {
     return NULL;
 }
 
-int GetDocumento(alumno_t alumno); {
+int GetDocumento(alumno_t alumno) {
     return NULL;
 }
 
