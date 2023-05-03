@@ -34,11 +34,11 @@ alumno_t CrearAlumno (char * apellido, char * nombre, int documento) {
 }
 
 int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio) {
-    return NULL;
+    return -1;      //para sacar warning
 }
 
 int GetDocumento(alumno_t alumno) {
-    return NULL;
+    return -1;      //para sacar warning
 }
 
 
@@ -46,7 +46,7 @@ int GetDocumento(alumno_t alumno) {
 
 
 
-int Serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) {
+int Serializar(alumno_t alumno, char cadena[], uint32_t espacio) {
     int disponibles = espacio;
     int resultado;
        
