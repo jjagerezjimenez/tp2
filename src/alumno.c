@@ -6,7 +6,7 @@
 
 #define TAMANO 100
 
-#define opcion 1 //modificar a 2 si quiero ver estatico, 1 para dinamico
+#define opcion 2 //modificar a 2 si quiero ver estatico, 1 para dinamico
 
 
 
