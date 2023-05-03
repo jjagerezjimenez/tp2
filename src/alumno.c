@@ -1,11 +1,13 @@
 #include "alumno.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 struct alumnso_s {  
     char apellido[TAMANO]; 
     char nombre[TAMANO];   
-    uint32_t documento;   
+    uint32_t documento;  
+    bool ocupado; 
 };
 
 
@@ -18,18 +20,23 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 }
 
 
+static struct alumno_s instancias[50] = {0}; //50 huecos
 
 alumno_t CrearAlmuno (char * apellido, char * nombre, int documento) {
-    alumno_t resultado = malloc(sizeof(struct alumno_s));
+    alumno_t resultado = malloc(sizeof(struct alumno_s));                   //es necesario luego de las modificaciones?
     strcpy(resulado->apellido, apellido);
     strcpy(resulado->nombre, nombre)
     resultado->documento = documento;
     return resultado;
 }
 
-int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio);
+int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio) {
+    return NULL;
+}
 
-int GetDocumento(alumno_t alumno);
+int GetDocumento(alumno_t alumno); {
+    return NULL;
+}
 
 
 

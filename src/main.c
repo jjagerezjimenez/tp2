@@ -3,13 +3,14 @@
 
 int main(void) {
 
-    static const struct alumno_s yo = {
-        .apellido = "Gerez Jimenez",
-        .nombre = "Juan Jose Armando",
-        .documento = 41649897,
-    };
+  //  static const struct alumno_s yo = {
+   //     .apellido = "Gerez Jimenez",
+   //     .nombre = "Juan Jose Armando",
+   //     .documento = 41649897,
+   // };
 
     char cadena[256];
+    alumno_t to = CrearAlmuno("Gerez Jimenez", "Juan Jose Aemando", 41649897);
 
     /**
      * @brief Cargo mis datos con la funcion main.
