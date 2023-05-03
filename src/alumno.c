@@ -6,7 +6,7 @@
 
 #define TAMANO 100
 
-struct alumnso_s {  
+struct alumno_s {  
     char apellido[TAMANO]; 
     char nombre[TAMANO];   
     uint32_t documento;  
