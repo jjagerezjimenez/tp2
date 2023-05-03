@@ -19,9 +19,12 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 
 
 
-alumno_t CrearAlmuno (char * apellido, char * nombre, int documento);{
-    alumno_t resultado = malloc(sizeof(struct alumno_s))
+alumno_t CrearAlmuno (char * apellido, char * nombre, int documento) {
+    alumno_t resultado = malloc(sizeof(struct alumno_s));
+    strcpy(resulado->apellido, apellido);
     strcpy(resulado->nombre, nombre)
+    resultado->documento = documento;
+    return resultado;
 }
 
 int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio);
