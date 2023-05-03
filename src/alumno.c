@@ -25,7 +25,7 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 
 //static struct alumno_s instancias[50] = {0}; //50 huecos              //otra forma
 
-alumno_t CrearAlmuno (char * apellido, char * nombre, int documento) {
+alumno_t CrearAlumno (char * apellido, char * nombre, int documento) {
     alumno_t resultado = malloc(sizeof(struct alumno_s));                   //Malloc se usa para crear "objetos" de forma dinamica
     strcpy(resulado->apellido, apellido);
     strcpy(resulado->nombre, nombre)
@@ -46,7 +46,7 @@ int GetDocumento(alumno_t alumno); {
 
 
 
-int serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) {
+int Serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio) {
     int disponibles = espacio;
     int resultado;
        

@@ -21,7 +21,7 @@ extern "C" {
 typedef struct alumno_s * alumno_t;
 
 
-alumno_t CrearAlmuno (char * apellido, char * nombre, int documento);
+alumno_t CrearAlumno (char * apellido, char * nombre, int documento);
 
 int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio);
 
