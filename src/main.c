@@ -19,7 +19,7 @@ int main(void) {
      */
     
     
-       if(Serializar(&yo, cadena, sizeof(cadena)) >= 0) {                                   //quitar "resultado"
+       if(Serializar(yo, cadena, sizeof(cadena)) >= 0) {                                   //quitar "resultado"
             printf("%s\n", cadena);
        }else{
             printf("Error al serializar\n");
