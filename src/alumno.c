@@ -27,8 +27,8 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 
 alumno_t CrearAlumno (char * apellido, char * nombre, int documento) {
     alumno_t resultado = malloc(sizeof(struct alumno_s));                   //Malloc se usa para crear "objetos" de forma dinamica
-    strcpy(resulado->apellido, apellido);
-    strcpy(resulado->nombre, nombre)
+    strcpy(resultado->apellido, apellido);
+    strcpy(resultado->nombre, nombre);
     resultado->documento = documento;
     return resultado;
 }
