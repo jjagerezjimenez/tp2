@@ -3,15 +3,18 @@
 #include <stdio.h>
 #include <string.h>
 
+
+#define TAMANO 100
+
 struct alumnso_s {  
     char apellido[TAMANO]; 
     char nombre[TAMANO];   
     uint32_t documento;  
-    bool ocupado; 
+ //   bool ocupado;             //otra forma
 };
 
 
-static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {           //const?
+static int SerializarCadena(const char * campo, const char * valor, char * cadena, int espacio) {          
     return snprintf(cadena, espacio, "\"%s\":\"%s\",", campo, valor);
 }
 
@@ -20,10 +23,10 @@ static int SerializarNumero(const char * campo, int valor, char * cadena, int es
 }
 
 
-static struct alumno_s instancias[50] = {0}; //50 huecos
+//static struct alumno_s instancias[50] = {0}; //50 huecos              //otra forma
 
 alumno_t CrearAlmuno (char * apellido, char * nombre, int documento) {
-    alumno_t resultado = malloc(sizeof(struct alumno_s));                   //es necesario luego de las modificaciones?
+    alumno_t resultado = malloc(sizeof(struct alumno_s));                   //Malloc se usa para crear "objetos" de forma dinamica
     strcpy(resulado->apellido, apellido);
     strcpy(resulado->nombre, nombre)
     resultado->documento = documento;

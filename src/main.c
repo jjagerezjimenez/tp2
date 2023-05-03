@@ -11,6 +11,7 @@ int main(void) {
 
     char cadena[256];
     alumno_t to = CrearAlmuno("Gerez Jimenez", "Juan Jose Aemando", 41649897);
+    //alumno_t otro = CrearAlumno();            //por si quiero agregar otro alumno
 
     /**
      * @brief Cargo mis datos con la funcion main.
